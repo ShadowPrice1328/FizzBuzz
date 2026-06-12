@@ -20,50 +20,63 @@ public class FizzBuzzDetector {
     /// <exception cref="ArgumentException">
     /// Thrown when the input length does not meet the required constraints.
     /// </exception>
-    public FizzBuzzResult  GetOverlappings(string input) {
+    public FizzBuzzResult GetOverlappings(string input)
+    {
         if (input == null)
-          throw new ArgumentNullException(nameof(input), "Input cannot be null.");
-        
-        if (input.Length < 7 || input.Length > 100)
-          throw new ArgumentException("Input string length must be between 7 and 100 characters.");
+            throw new ArgumentNullException(nameof(input), "Input cannot be null.");
 
+        if (input.Length < 7 || input.Length > 100)
+            throw new ArgumentException("Input string length must be between 7 and 100 characters.");
+
+        var result = new FizzBuzzResult();
         var output = new StringBuilder(input.Length);
 
         int wordIndex = 0;
         int i = 0;
 
-        while (i < input.Length) {
-            if (!char.IsLetterOrDigit(input[i])) {
+        input = input.Trim('\n', '\r', ' ');
+
+        while (i < input.Length)
+        {
+            if (!char.IsLetterOrDigit(input[i]) && input[i] != '\'')
+            {
                 output.Append(input[i++]);
                 continue;
             }
 
             int start = i;
 
-            while (i < input.Length && char.IsLetterOrDigit(input[i]))
+            while (i < input.Length && (char.IsLetterOrDigit(input[i]) || input[i] == '\'')) {
                 i++;
+            }
 
             int length = i - start;
 
             wordIndex++;
 
-            if (wordIndex % 15 == 0) {
+            if (wordIndex % 15 == 0)
+            {
                 output.Append("FizzBuzz");
                 result.FizzBuzzCount++;
             }
-            else if (wordIndex % 3 == 0) {
+            else if (wordIndex % 3 == 0)
+            {
                 output.Append("Fizz");
                 result.FizzCount++;
             }
-            else if (wordIndex % 5 == 0) {
+            else if (wordIndex % 5 == 0)
+            {
                 output.Append("Buzz");
                 result.BuzzCount++;
             }
-            else {
+            else
+            {
                 output.Append(input, start, length);
             }
         }
 
         result.OutputString = output.ToString();
+
+        return result;
     }
 }
