@@ -20,63 +20,60 @@ public class FizzBuzzDetector {
     /// <exception cref="ArgumentException">
     /// Thrown when the input length does not meet the required constraints.
     /// </exception>
-    public FizzBuzzResult GetOverlappings(string input)
-    {
-        if (input == null)
-            throw new ArgumentNullException(nameof(input), "Input cannot be null.");
+    public FizzBuzzResult GetOverlappings(string input) {
+      if (input == null) {
+        throw new ArgumentNullException(nameof(input), "Input cannot be null.");
+      }
 
-        if (input.Length < 7 || input.Length > 100)
-            throw new ArgumentException("Input string length must be between 7 and 100 characters.");
+      if (input.Length < 7 || input.Length > 100) {
+        throw new ArgumentException(
+          "Input string length must be between 7 and 100 characters.");
+      }
 
-        var result = new FizzBuzzResult();
-        var output = new StringBuilder(input.Length);
+      var result = new FizzBuzzResult();
+      var output = new StringBuilder(input.Length);
 
-        int wordIndex = 0;
-        int i = 0;
+      int wordIndex = 0;
+      int i = 0;
 
-        input = input.Trim('\n', '\r', ' ');
+      input = input.Trim('\n', '\r', ' ');
 
-        while (i < input.Length)
-        {
-            if (!char.IsLetterOrDigit(input[i]) && input[i] != '\'')
-            {
-                output.Append(input[i++]);
-                continue;
-            }
-
-            int start = i;
-
-            while (i < input.Length && (char.IsLetterOrDigit(input[i]) || input[i] == '\'')) {
-                i++;
-            }
-
-            int length = i - start;
-
-            wordIndex++;
-
-            if (wordIndex % 15 == 0)
-            {
-                output.Append("FizzBuzz");
-                result.FizzBuzzCount++;
-            }
-            else if (wordIndex % 3 == 0)
-            {
-                output.Append("Fizz");
-                result.FizzCount++;
-            }
-            else if (wordIndex % 5 == 0)
-            {
-                output.Append("Buzz");
-                result.BuzzCount++;
-            }
-            else
-            {
-                output.Append(input, start, length);
-            }
+      while (i < input.Length) {
+        if (!char.IsLetterOrDigit(input[i]) && input[i] != '\'') {
+          output.Append(input[i]);
+          i++;
+          continue;
         }
 
-        result.OutputString = output.ToString();
+        int start = i;
 
-        return result;
+        while (i < input.Length && (char.IsLetterOrDigit(input[i]) || input[i] == '\'')) {
+          i++;
+        }
+
+        int length = i - start;
+
+        wordIndex++;
+
+        if (wordIndex % 15 == 0) {
+          output.Append("FizzBuzz");
+          result.FizzBuzzCount++;
+        }
+        else if (wordIndex % 3 == 0) {
+          output.Append("Fizz");
+          result.FizzCount++;
+        }
+        else if (wordIndex % 5 == 0) {
+          output.Append("Buzz");
+          result.BuzzCount++;
+        }
+        else {
+          output.Append(input, start, length);
+        }
+      }
+
+      result.OutputString = output.ToString();
+
+      return result;
     }
 }
