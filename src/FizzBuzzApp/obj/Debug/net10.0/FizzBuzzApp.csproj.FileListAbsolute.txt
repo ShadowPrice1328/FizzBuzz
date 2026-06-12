@@ -3,3 +3,10 @@
 /home/shadowprice/Documents/Development/dotnet/FizzBuzz/FizzBuzzSolution/src/FizzBuzzApp/obj/Debug/net10.0/FizzBuzzApp.AssemblyInfo.cs
 /home/shadowprice/Documents/Development/dotnet/FizzBuzz/FizzBuzzSolution/src/FizzBuzzApp/obj/Debug/net10.0/FizzBuzzApp.csproj.CoreCompileInputs.cache
 /home/shadowprice/Documents/Development/dotnet/FizzBuzz/FizzBuzzSolution/src/FizzBuzzApp/obj/Debug/net10.0/FizzBuzzApp.sourcelink.json
+/home/shadowprice/Documents/Development/dotnet/FizzBuzz/FizzBuzzSolution/src/FizzBuzzApp/bin/Debug/net10.0/FizzBuzzApp.deps.json
+/home/shadowprice/Documents/Development/dotnet/FizzBuzz/FizzBuzzSolution/src/FizzBuzzApp/bin/Debug/net10.0/FizzBuzzApp.dll
+/home/shadowprice/Documents/Development/dotnet/FizzBuzz/FizzBuzzSolution/src/FizzBuzzApp/bin/Debug/net10.0/FizzBuzzApp.pdb
+/home/shadowprice/Documents/Development/dotnet/FizzBuzz/FizzBuzzSolution/src/FizzBuzzApp/obj/Debug/net10.0/FizzBuzzApp.dll
+/home/shadowprice/Documents/Development/dotnet/FizzBuzz/FizzBuzzSolution/src/FizzBuzzApp/obj/Debug/net10.0/refint/FizzBuzzApp.dll
+/home/shadowprice/Documents/Development/dotnet/FizzBuzz/FizzBuzzSolution/src/FizzBuzzApp/obj/Debug/net10.0/FizzBuzzApp.pdb
+/home/shadowprice/Documents/Development/dotnet/FizzBuzz/FizzBuzzSolution/src/FizzBuzzApp/obj/Debug/net10.0/ref/FizzBuzzApp.dll
